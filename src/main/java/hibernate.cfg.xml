@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">access</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/demo</property>
+        <property name="hibernate.connection.username">amandava</property>
+        <!--  
+        In Hibernate 6, explicit mentioning of dialect is not required as it is automatically
+        configure it based on the defined database driver 
+        	<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        -->
+        
+        
+    	<!-- JDBC connection pool settings -->
+		<property name="connection.pool_size">1</property>
+
+		<!-- Echo the SQL to stdout -->
+		<property name="show_sql">true</property>
+		
+        <!-- Auto create tables if not already created -->
+        <property name="hbm2ddl.auto">update</property>
+        
+        <mapping class="com.kumar.example.Student" />
+    </session-factory>
+</hibernate-configuration>
